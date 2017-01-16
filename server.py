@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import flask
 import time
 import random
@@ -24,8 +26,8 @@ app = flask.Flask(__name__)
 def index():
     def inner():
         while True:
-            time.sleep(1)
+            time.sleep(0.3)
             yield '%s<br/>\n' % get_sentence()
     return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show the partial page immediately
 
-app.run(debug=False)
+app.run(debug=False, host='0.0.0.0')
