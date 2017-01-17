@@ -25,9 +25,11 @@ app = flask.Flask(__name__)
 @app.route('/')
 def index():
     def inner():
-        while True:
-            time.sleep(0.3)
+        #while True:
+        for i in range(100):
             yield '%s<br/>\n' % get_sentence()
+            #time.sleep(0.1)
     return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show the partial page immediately
 
-app.run(debug=False, host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0')
