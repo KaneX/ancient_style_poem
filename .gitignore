@@ -104,3 +104,4 @@ ENV/
 .idea/
 nohup.out
 server.pid
+uwsgi.pid
