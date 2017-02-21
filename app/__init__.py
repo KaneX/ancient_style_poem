@@ -26,7 +26,7 @@ app = flask.Flask(__name__)
 def index():
     def inner():
         #while True:
-        for i in range(100):
+        for i in range(20):
             yield '%s<br/>\n' % get_sentence()
             #time.sleep(0.1)
     return flask.Response(inner(), mimetype='text/html')  # text/html is required for most browsers to show the partial page immediately
